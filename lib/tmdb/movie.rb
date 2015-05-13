@@ -12,14 +12,14 @@ module Tmdb
     
     def posters
       images.posters.map{|p| OpenStruct.new(p)}
-      unless images.map{|i| i.file_path}.includes?(poster_path)
+      unless images.map{|i| i.file_path}.include?(poster_path)
         images << OpenStruct.new({file_path: poster_path})
       end
     end
     
     def backdrops
       images = images.backdrops.map{|p| OpenStruct.new(p)}
-      unless images.map{|i| i.file_path}.includes?(backdrop_path)
+      unless images.map{|i| i.file_path}.include?(backdrop_path)
         images << OpenStruct.new({file_path: backdrop_path})
       end
     end
