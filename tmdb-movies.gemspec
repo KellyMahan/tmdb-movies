@@ -5,7 +5,7 @@ require 'tmdb/version'
 
 Gem::Specification.new do |spec|
   spec.name          = "tmdb-movies"
-  spec.version       = Tmdb::Movies::VERSION
+  spec.version       = Tmdb::VERSION
   spec.authors       = ["Kelly Mahan"]
   spec.email         = ["kmahan@kmahan.com"]
   spec.summary       = %q{A gem for easy access to themoviedb.org's api.}
