@@ -7,11 +7,11 @@ module Tmdb
     end
     
     def images
-      @images ||= api.person_images(id).profiles.map{|i| OpenStruct.new(i)}
+      api.person_images(id).profiles.map{|i| OpenStruct.new(i)}
     end
     
     def movies
-      @movies ||= api.person_movie_credits(id).cast.map{|c| OpenStruct.new(c)}
+      api.person_movie_credits(id).cast.map{|c| OpenStruct.new(c)}
     end
     
     def method_missing(method, *args, &block)

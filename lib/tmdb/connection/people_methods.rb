@@ -6,10 +6,14 @@ module Tmdb
       OpenStruct.new(get("/person/#{id}", options))
     end
     
+    
+    def person_all_changes(options={})
+      OpenStruct.new(get("/person/changes", options))
+    end
+    
     people_api_methods = %w(
       popular
       latest
-      changes
     )
     
     people_api_methods.each do |m|

@@ -6,6 +6,10 @@ module Tmdb
       OpenStruct.new(get("/movie/#{id}", options))
     end
     
+    def movie_all_changes(options={})
+      OpenStruct.new(get("/movie/changes", options))
+    end
+    
     
     movie_api_methods = %w(
       latest
@@ -13,7 +17,7 @@ module Tmdb
       upcoming
       top_rated
       popular
-      changes
+      
     )
     
     movie_api_methods.each do |m|
