@@ -35,7 +35,7 @@ module Tmdb
     end
     
     def videos
-      api.movie_videos(id).map{|t| OpenStruct.new(t)}
+      api.movie_videos(id).results.map{|t| OpenStruct.new(t)}
     end
     
     def method_missing(method, *args, &block)
