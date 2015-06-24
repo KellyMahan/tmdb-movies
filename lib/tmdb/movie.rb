@@ -38,6 +38,10 @@ module Tmdb
       api.movie_videos(id).results.map{|t| OpenStruct.new(t)}
     end
     
+    def release_date
+      Date.parse(@info.release_date) rescue nil
+    end
+    
     def method_missing(method, *args, &block)
       if @info.respond_to?(method)
         @info.send(method, *args, &block)
